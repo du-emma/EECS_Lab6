@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Verification</title>
+    <style>
+        /* Background color */
+        .bg {
+            background-color: rgb(254, 166, 215); /* Light pink */
+        }
+    </style>
+</head>
+<body>
+    <h1>EECS 348 Lab Seven Practice Three</h1>
+
+    <p>First Password: <input type="text" id="password1"></p> <!-- Changed type to text -->
+    <p>Second Password: <input type="text" id="password2"></p> <!-- Changed type to text -->
+    <button onclick="verifyPassword()">Validate Your Passwords</button>
+
+    <script>
+        function verifyPassword() {
+            // Get password values
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+
+            // Check if passwords meet criteria
+            if (password1.length < 8) {
+                alert("The length of the first password is less than 8 characters!");
+            } if (password2.length < 8) {
+                alert("The length of the second password is less than 8 characters!");
+            } else if (password1 !== password2) {
+                alert("Passwords do not match!");
+            } else {
+                alert("Passwords match!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+

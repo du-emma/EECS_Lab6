@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Color and Border Control</title>
+    <style>
+        #myParagraph {
+            padding: 10px;
+            border-style: solid;
+            border-width: 2px;
+        }
+    </style>
+    <style>
+        /* Background color */
+        .bg {
+            background-color: rgb(255, 129, 198); /* Light pink */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+    <p id="myParagraph">Paragraph to be altered</p>
+
+    <p>Border R (0-255): <input type="text" id="RBorder" value=""></p>
+    <p>Border G (0-255): <input type="text" id="GBorder" value=""></p>
+    <p>Border B (0-255): <input type="text" id="BBorder" value=""></p>
+    <p>Border Width: <input type="text" id="border_width" value=""></p>
+    
+    <p>Background R (0-255): <input type="text" id="RBack" value=""></p>
+    <p>Background G (0-255): <input type="text" id="GBack" value=""></p>
+    <p>Background B (0-255): <input type="text" id="BBack" value=""></p>
+    
+    <button onclick="changeColor()">Change the Color!</button>
+
+    <script>
+        function changeColor() {
+            // Get the RGB values and width for the border
+            let rBorder = document.getElementById('RBorder').value;
+            let gBorder = document.getElementById('GBorder').value;
+            let bBorder = document.getElementById('BBorder').value;
+            let borderWidth = document.getElementById('border_width').value;
+
+            // Get the RGB values for the background
+            let rBack = document.getElementById('RBack').value;
+            let gBack = document.getElementById('GBack').value;
+            let bBack = document.getElementById('BBack').value;
+
+            // Apply the border color, width, and background color to the paragraph
+            let paragraph = document.getElementById('myParagraph');
+            paragraph.style.borderColor = `rgb(${rBorder}, ${gBorder}, ${bBorder})`;
+            paragraph.style.borderWidth = borderWidth + 'px';
+            paragraph.style.backgroundColor = `rgb(${rBack}, ${gBack}, ${bBack})`;
+        }
+    </script>
+</body>
+</html>
